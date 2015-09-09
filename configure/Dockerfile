@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-RUN apt-get update -qq && apt-get install -qqy python python-pip vim nano
+RUN apt-get update -qq && apt-get install -qqy python python-pip vim nano curl
 COPY requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
