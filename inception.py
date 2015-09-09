@@ -6,7 +6,7 @@ user_whose_repos_are_scanned = github.get_user("teamoptimization")
 for repo in user_whose_repos_are_scanned.get_repos():
     try:
         print "configuring", repo.name
-        configurator = GoCdConfigurator(HostRestClient("localhost:8153"))
+        configurator = GoCdConfigurator(HostRestClient("go-server:8153"))
 
         pipeline = configurator\
             .ensure_pipeline_group("auto-created")\
