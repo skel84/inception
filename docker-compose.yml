@@ -4,11 +4,11 @@ server:
     - "8153:8153"
 
 agent:
-  build: gocd-agent
+  image: ivanmoore/inception-agent
   links:
     - "server:go-server"
 
 configure:
-  build: configure
+  image: ivanmoore/inception-configure
   links:
     - "server:go-server"
