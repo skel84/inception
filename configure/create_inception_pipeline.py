@@ -1,6 +1,8 @@
+#!/usr/bin/env python
+
 from gomatic import GoCdConfigurator, HostRestClient, ExecTask, GitMaterial
 
-configurator = GoCdConfigurator(HostRestClient("localhost:8153"))
+configurator = GoCdConfigurator(HostRestClient("go-server:8153"))
 
 pipeline = configurator\
     .ensure_pipeline_group("inception")\

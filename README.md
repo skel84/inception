@@ -5,24 +5,36 @@ video of it working, rather than as an example of good code for such a system.
 It isn't intended to be used for anything real, or to be a particularly good example.
 It has been deliberately kept short and simple.
 
-# Install various requirements
+# Install requirements
 
-You need to install Python, some python modules (see requirements.txt)
-and [GoCD version 14.2.0(377-d8a2866d6af85e)](http://www.go.cd/download/).
+* [Docker](https://www.docker.com/) - [mac](http://docs.docker.com/mac/started/) [linux](http://docs.docker.com/linux/started/) [windows](http://docs.docker.com/windows/started/)
+* [Docker Compose](https://docs.docker.com/compose/install/)
 
-This example requires running GoCD server and agent on your machine.
+# Run the GoCD server and agent
 
-You might want to use a VM so you don't have to install these things on your machine.
+* docker-compose up -d
 
-I might provide a Dockerfile if I get the time.
+# See GoCD server running
 
-## Set up inception pipeline
+View [http://localhost:8153](http://localhost:8153)
 
-Run: `python create_inception_pipeline.py`
+# Set up inception pipeline
 
-Note that this will run a scripts from my GitHub account - so don't run it until you have
-read the code and understood what it is doing.
+* docker-compose run configure bash
 
-## See what it does
+Inside container just started, run: 
 
-View [http://localhost:8153](http://localhost:8153).
+`./create_inception_pipeline.py`
+
+Note that this will run a script curled from my GitHub account.
+Don't run it until you have read the code and understood what it is doing.
+
+# Create new repos
+
+* if you are me, create a new repo in https://github.com/teamoptimization
+* alternatively, clone this repo and edit inception.py line 5 
+
+# Do something that changes pipeline
+
+* if you are me, edit one of the "command.txt" files in one of the repos in https://github.com/teamoptimization
+* alternatively, clone this repo and edit inception.py line 5, then edit one of the "command.txt" files in one of the relevant repos

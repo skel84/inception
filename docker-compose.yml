@@ -1,0 +1,14 @@
+server:
+  image: gocd/gocd-server
+  ports:
+    - "8153:8153"
+
+agent:
+  build: gocd-agent
+  links:
+    - "server:go-server"
+
+configure:
+  build: configure
+  links:
+    - "server:go-server"
