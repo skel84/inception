@@ -18,9 +18,10 @@ pipeline.ensure_stage('build').ensure_job('build') \
 environments = open('environments.txt').readlines()
 for environment in environments:
     if environment:
-        pipeline \
-            .ensure_stage('deploy-to-' + environment.strip()) \
-            .ensure_job('deploy') \
+        stage = pipeline.ensure_stage('deploy-to-' + environment.strip())
+        stage.ensure_job('deploy') \
             .ensure_task(ExecTask(['echo', 'deploy', 'to', 'environment']))
+        stage.ensure_job('some-other-thing') \
+            .ensure_task(ExecTask(['echo', 'boo']))
 
 configurator.save_updated_config()
