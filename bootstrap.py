@@ -19,7 +19,7 @@ environments = open('environments.txt').readlines()
 for environment in environments:
     if environment:
         pipeline\
-            .ensure_stage('deploy-to-' + environment)\
+            .ensure_stage('deploy-to-' + environment.strip())\
             .ensure_job('deploy')\
             .ensure_task(ExecTask('echo deploy to ' + environment))
 
