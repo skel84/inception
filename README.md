@@ -57,3 +57,7 @@ wait up to an hour (you could reduce the poll time by changing the value passed 
 
 * if you are me, edit one of the "command.txt" files in one of the repos in https://github.com/teamoptimization
 * alternatively, clone this repo and edit inception.py (as in *Create new repos*), then edit one of the "command.txt" files in one of the relevant repos
+
+# FAQ
+
+The server says it can't resolve bitbucket.com - follow [these instructions](https://robinwinslow.co.uk/2014/08/27/fix-docker-networking/).
