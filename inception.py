@@ -2,7 +2,7 @@ from gomatic import GoCdConfigurator, HostRestClient, ExecTask
 from github import Github, GithubException
 
 github = Github()
-user_whose_repos_are_scanned = github.get_user("teamoptimization")
+user_whose_repos_are_scanned = github.get_user("skel84")
 for repo in user_whose_repos_are_scanned.get_repos():
     try:
         print "configuring", repo.name
