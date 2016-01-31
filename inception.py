@@ -10,7 +10,7 @@ for repo in user_whose_repos_are_scanned.get_repos():
 
         pipeline = configurator\
             .ensure_pipeline_group("auto-created")\
-            .ensure_pipeline(repo.name)\
+            .ensure_pipeline("demo")\
             .set_git_url(repo.clone_url)
         job = pipeline\
             .ensure_initial_stage("bootstrap")\
