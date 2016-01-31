@@ -16,7 +16,7 @@ for repo in user_whose_repos_are_scanned.get_repos():
             .ensure_initial_stage("bootstrap")\
             .ensure_job("configure-pipeline")
         bootstrap_file_url = "https://raw.githubusercontent.com/ivanmoore/inception/master/bootstrap.py"
-        job.ensure_task(ExecTask(["bash", "-c", "curl -fSs " + bootstrap_file_url + " | python - " + repo.name]))
+        job.ensure_task(ExecTask(["bash", "-c", "curl -fSs " + bootstrap_file_url + " | python - " + "demo"]))
 
         configurator.save_updated_config()
     except GithubException:
